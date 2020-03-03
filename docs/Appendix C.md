@@ -8,7 +8,7 @@ Measurement Specifications
 
 >   All specifications subject to change at any time without notice.
 
- C.2 Limits
+ Limits
 -----------
 
 | SET command | 1000mA per pair, or 2000mA total |

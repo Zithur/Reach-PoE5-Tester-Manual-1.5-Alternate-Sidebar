@@ -7,7 +7,7 @@ Power-on
 
 >   RT-PoE5\>
 
-<br>A.2 Error messages
+<br>Error messages
 ----------------------
 
 >   All error messages begin with the "!" exclamation mark.
@@ -29,7 +29,7 @@ Power-on
 | ! invalid arguments                   | Command argument(s) are invalid                                                                                                         |
 | (other messages)                      | There are other messages that begin with an exclamation point that are internal errors. If these appear, the unit needs to be repaired. |
 
-<br>A.3 Inrush Example Waveform
+<br>Inrush Example Waveform
 -------------------------------
 
 >   The example waveform below shows the current waveform for the main pair on a

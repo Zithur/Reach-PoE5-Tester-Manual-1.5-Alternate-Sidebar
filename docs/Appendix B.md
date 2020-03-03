@@ -5,7 +5,7 @@ Overview
 >   prefixes are shown. PSE, PD as defined in IEEE 802.3bt. The RT-PoE5 commands
 >   are issued in the order shown.
 
-B.2 Signature Detect
+Signature Detect
 --------------------
 
 | **RT-PoE commands:**           | **PSE check after commands issued**                     |
@@ -24,7 +24,7 @@ B.2 Signature Detect
 | cap on                         |                                                         |
 | connect on                     |                                                         |
 
-<br>B.3 Class Detect, dual signature mode
+<br>Class Detect, dual signature mode
 -----------------------------------------
 
 | **RT-PoE commands:**                      | **PSE check after commands issued**                                                       |
@@ -48,7 +48,7 @@ B.2 Signature Detect
 | set xxx                                   |                                                                                           |
 | connect on                                |                                                                                           |
 
-<br>B.4 Class Detect, single signature mode
+<br>Class Detect, single signature mode
 -------------------------------------------
 
 | **RT-PoE commands:**                          | **PSE check after commands issued**                                                       |
@@ -88,7 +88,7 @@ B.2 Signature Detect
 | set yyy                                       |                                                                                           |
 | connect on                                    |                                                                                           |
 
-<br>B.5 Power Status and overload (IEEE 802.3af)
+<br>Power Status and overload (IEEE 802.3af)
 ------------------------------------------------
 
 | **RT-PoE commands:**                  | **PSE check after commands issued**                               |
@@ -106,13 +106,13 @@ B.2 Signature Detect
 | set 390                               | Verify that PSE sees overload and shuts off power.                |
 | status                                | Verify that power is off.                                         |
 
-B.6 Power Status and overload (IEEE 802.3at)
+Power Status and overload (IEEE 802.3at)
 --------------------------------------------
 
 Same as above, but use “class 4”, and “set 600” for full power and “set 660” for
 overload.
 
-<br>B.7 Power Status and overload (IEEE 802.3bt, single signature) 
+<br>Power Status and overload (IEEE 802.3bt, single signature) 
 -------------------------------------------------------------------
 
 | **RT-PoE commands:**                           | **PSE check after commands issued**                                  |
@@ -131,7 +131,7 @@ overload.
 | set 2000                                       | Verify that PSE sees overload and shuts off power.                   |
 | status                                         | Verify that power is off.                                            |
 
-B.8 Power Status and overload (IEEE 802.3bt, dual signature) 
+Power Status and overload (IEEE 802.3bt, dual signature) 
 -------------------------------------------------------------
 
 | **RT-PoE commands:**                            | **PSE check after commands issued**                                  |
@@ -150,7 +150,7 @@ B.8 Power Status and overload (IEEE 802.3bt, dual signature)
 | set 2000                                        | Verify that PSE sees overload and shuts off power.                   |
 | status                                          | Verify that power is off.                                            |
 
-B.9 Data transmission under power
+Data transmission under power
 ---------------------------------
 
 | **RT-PoE commands:**                  | **PSE check after commands issued**                                                |
