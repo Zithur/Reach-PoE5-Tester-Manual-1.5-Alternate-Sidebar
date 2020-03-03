@@ -1,0 +1,17 @@
+site_name: PoE5 Tester Manual 1.5
+
+theme: readthedocs
+
+nav:
+    - Home: index.md
+    - Revision History: Revision History.md
+    - General: General.md
+    - Configuration Guide: Configuration Guide.md
+    - Connectors and Jumpers: Connectors and Jumpers.md
+    - Operational Overview: Operational Overview.md
+    - Ethernet Cables: Ethernet Cables.md
+    - Command Reference: Command Reference.md
+    - Appendix A - Operational Notes: Appendix A.md
+    - Appendix B - Test Setups: Appendix B.md
+    - Appendix C - Specifications: Appendix C.md
+    - Appendix D - Manual Change History: Appendix D.md
