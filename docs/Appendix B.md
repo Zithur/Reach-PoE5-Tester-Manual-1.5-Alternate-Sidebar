@@ -1,14 +1,14 @@
 Overview
 --------
 
->   This Appendix gives an overview of basic test setups. No port or group
->   prefixes are shown. PSE, PD as defined in IEEE 802.3bt. The RT-PoE5 commands
->   are issued in the order shown.
+This Appendix gives an overview of basic test setups. No port or group
+prefixes are shown. PSE, PD as defined in IEEE 802.3bt. The RT-PoE5 commands
+are issued in the order shown.
 
 Signature Detect
 --------------------
 
-| **RT-PoE commands:**           | **PSE check after commands issued**                     |
+| **RT-PoE Commands:**           | **PSE Check After Commands Issued**                     |
 |--------------------------------|---------------------------------------------------------|
 | reset                          | Verify that the PSE recognizes a valid PD.              |
 | detect ok                      |                                                         |
@@ -24,7 +24,7 @@ Signature Detect
 | cap on                         |                                                         |
 | connect on                     |                                                         |
 
-<br>Class Detect, dual signature mode
+<br>Class Detect, Dual Signature Mode
 -----------------------------------------
 
 | **RT-PoE commands:**                      | **PSE check after commands issued**                                                       |
