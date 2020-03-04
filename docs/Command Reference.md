@@ -1,62 +1,61 @@
 Command Reference
 =================
 
->   This section describes the commands available. For typical command
->   sequences, see [Appendix B](#_B.1_Overview).
+This section describes the commands available. For typical command
+sequences, see [Appendix B](#_B.1_Overview).
 
->   When the unit is ready for a command, it issues the default prompt
->   "RT-PoE5\>". The prompt may be changed via the "hostname" command so that a
->   unit can be identified by its prompt. Command buffering is not supported;
->   you must wait for the prompt before sending a command. The default baud rate
->   is 115200. This can be changed via the "baud" command and is preserved
->   across power cycles.
+When the unit is ready for a command, it issues the default prompt
+"RT-PoE5\>". The prompt may be changed via the "hostname" command so that a
+unit can be identified by its prompt. Command buffering is not supported;
+you must wait for the prompt before sending a command. The default baud rate
+is 115200. This can be changed via the "baud" command and is preserved
+across power cycles.
 
->   All commands are terminated by a \<return\> which is the HEX character 0x0D
->   (decimal 13).
+All commands are terminated by a \<return\> which is the HEX character 0x0D
+(decimal 13).
 
->   Most commands have a short form version. The optional characters of a
->   command are indicated by the [ ] brackets.
+Most commands have a short form version. The optional characters of a
+command are indicated by the [ ] brackets.
 
->   Parameters shown within the \<\> characters are required parameters.
+Parameters shown within the \<\> characters are required parameters.
 
->   All commands that take "on" or "off" arguments can also take "1" and "0" as
->   arguments.
+All commands that take "on" or "off" arguments can also take "1" and "0" as
+arguments.
 
->   All commands that work with the pairs can use one of two different forms.
->   The first form, such as “conn 1” tells the PoE5 to connect both the main and
->   the alt pairs.
+All commands that work with the pairs can use one of two different forms.
+The first form, such as “conn 1” tells the PoE5 to connect both the main and
+the alt pairs.
 
->   The second form lets the user specify values for each pair. A command such
->   as “conn 1,0” tells the PoE5 to connect just the main pair. Using the
->   command “conn 0,1” tells the PoE5 to connect the alt pair only. Using the
->   command “conn 1,1” is the same as using “conn 1”.
+The second form lets the user specify values for each pair. A command such
+as “conn 1,0” tells the PoE5 to connect just the main pair. Using the
+command “conn 0,1” tells the PoE5 to connect the alt pair only. Using the
+command “conn 1,1” is the same as using “conn 1”.
 
->   Responses from the unit that include variable data, such as the port number,
->   are shown as 'C'-language printf style strings, so the script writer knows
->   exactly what to expect as a response.
+Responses from the unit that include variable data, such as the port number,
+are shown as 'C'-language printf style strings, so the script writer knows
+exactly what to expect as a response.
 
 EEPROM Warning
 --------------
 
->   **NOTE: The non-volatile memory used for EEPROM storage has a write cycle
->   limit of about 1,000,000 cycles. To prevent future issues, the user should
->   not include commands that write to EEPROM in repetitive scripts.**
+**NOTE: The non-volatile memory used for EEPROM storage has a write cycle
+limit of about 1,000,000 cycles. To prevent future issues, the user should
+not include commands that write to EEPROM in repetitive scripts.**
 
 <br>ECHO
 --------
 
->   Description: Used to test the communication between the host and this unit.
->   This is useful at higher baud rates to validate a baud can be used without
->   error. A script can repeat the echo command continuously and verify that no
->   communication errors are present.
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Used to test the communication between the host and this unit. This is useful at<br/> 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; higher baud rates to validate a baud can be used without error. A script can repeat<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; the echo command continuously and verify that no communication errors are<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; present.
 
->   Command: echo \<string\>
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo &lt;string&gt;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; <string\> = any ASCII string. May contain spaces.
 
->   \<string\> = any ASCII string. May contain spaces.
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; echo this is a test
 
->   Example: echo this is a test
-
->   Response: "this is a test"
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "this is a test"
 
 ERROR CHECK
 -----------
