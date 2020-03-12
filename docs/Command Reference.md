@@ -35,12 +35,12 @@ Responses from the unit that include variable data, such as the port number,
 are shown as 'C'-language printf style strings, so the script writer knows
 exactly what to expect as a response.
 
-EEPROM Warning
+<br/>EEPROM Warning
 --------------
 
-**NOTE: The non-volatile memory used for EEPROM storage has a write cycle
+***NOTE: The non-volatile memory used for EEPROM storage has a write cycle
 limit of about 1,000,000 cycles. To prevent future issues, the user should
-not include commands that write to EEPROM in repetitive scripts.**
+not include commands that write to EEPROM in repetitive scripts.***
 
 <br>ECHO
 --------
@@ -57,104 +57,100 @@ not include commands that write to EEPROM in repetitive scripts.**
 
 **Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "this is a test"
 
-ERROR CHECK
+<br/>ERROR CHECK
 -----------
 
->   Description: The unit maintains an error flag that is set if any error
->   messages are generated. This command reports the error flag value and then
->   clears the error flag. A test script can run an entire sequence of commands
->   and check at the end to make sure there were no errors instead of having to
->   check on a command-by-command basis.
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The unit maintains an error flag that is set if any error messages are generated.<br/> 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; This command reports the error flag value and then clears the error flag. A test<br/> 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; script can run an entire sequence of commands and check at the end to make sure<br/> 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; there were no errors instead of having to check on a command-by-command basis.
 
->   Command: err[ors]
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; err[ors]
 
->   Result: "1 - one or more errors have occurred; error flag reset"  
->   - or -  
->   "0 - no errors have occurred"
+**Result:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "1 - one or more errors have occurred; error flag reset"<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; - or -<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "0 - no errors have occurred"
 
-HELP
+<br/>HELP
 ----
 
->   Description Displays a list of available commands.
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Displays a list of available commands.
 
->   Command: he[lp]
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; he[lp]
 
->   Command: ?
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ?
 
->   Example: help
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; help
 
-VERSION
+<br/>VERSION
 -------
 
->   Description Displays software and hardware version
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Displays software and hardware version
 
->   Command: vers[ion] [0\|1]
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; vers[ion] [0\|1]
 
->   Result: "Reach PoE Tester Model RT-PoE5/24
+**Result:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "Reach PoE Tester Model RT-PoE5/24<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; PN 53-0005-11 Rev A 0/1, SW 1.04, Jul 19 2019<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Copyright (C) 2019 by Reach Technology, a Novanta Company"
 
->   PN 53-0005-11 Rev A 0/1, SW 1.04, Jul 19 2019
+An error is generated if the line card versions are inconsistent; that is,
+if the three 8-port line cards have different firmware. Use vers 1 to get a
+verbose listing of version information with errors flagged.
 
->   Copyright (C) 2019 by Reach Technology, a Novanta Company"
-
->   An error is generated if the line card versions are inconsistent; that is,
->   if the three 8-port line cards have different firmware. Use vers 1 to get a
->   verbose listing of version information with errors flagged.
-
-BAUD
+<br/>BAUD
 ----
 
->   Description: Used to change the unit's baud rate. This will not take effect
->   until the unit power is cycled or the \*boot command is issued. This is done
->   to make sure the baud change is acceptable.  
->     
->   See [EEPROM Warning](#eeprom-warning).
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Used to change the unit's baud rate. This will not take effect until the unit power is<br/> 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cycled or the \*boot command is issued. This is done to make sure the baud change<br/> 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; is acceptable.  
+     
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; See [EEPROM Warning](#eeprom-warning).
 
->   Command: \*baud \<baudrate\>
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *baud &lt;baudrate&gt;
 
->   \<baudrate\> = 9600, 19200, 38400, 57600, or 115200
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &lt;baudrate&gt; = 9600, 19200, 38400, 57600, or 115200
 
->   Example: \*baud 19200
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; \*baud 19200
 
->   Response: "Console baud set to 19200. Cycle power or issue \*boot to effect
->   change."
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; "Console baud set to 19200. Cycle power or issue \*boot to effect
+change."
 
-BOOT
+<br/>BOOT
 ----
 
->   Description Resets the system to the power-on state. This is the same as if
->   the unit has its power cycled.
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Resets the system to the power-on state. This is the same as if the unit has its<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; power cycled.
 
->   Command \*boot
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; \*boot
 
-HOSTNAME
+<br/>HOSTNAME
 --------
 
->   Description: Used to change the unit's prompt. This is useful in a
->   production system because it allows the user to know with which physical
->   unit it is communicating. Name must be equal or less than 31 characters
->   long.  
->     
->   See [EEPROM Warning](#eeprom-warning).
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Used to change the unit's prompt. This is useful in a production system because it<br/> 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; allows the user to know with which physical unit it is communicating. Name must<br/> 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; be equal or less than 31 characters long.  
+     
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; See [EEPROM Warning](#eeprom-warning).
 
->   Command: \*host[name] \<string\>
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; *host[name] &lt;string&gt;
 
->   Example: \*hostname myTester
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; \*hostname myTester
 
->   This makes the unit's prompt "myTester\>"
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; This makes the unit's prompt "myTester\>"
 
-SHOW ALL
+<br/>SHOW ALL
 --------
 
->   Description Shows the current (last-sent) state of all commands on each
->   port. Note that there is no ‘port’ or ‘group’ syntax for ‘show all’.
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Shows the current (last-sent) state of all commands on each port. Note that there is<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; no ‘port’ or ‘group’ syntax for ‘show all’.
 
->   Command: sh[ow] all
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sh[ow] all
 
->   Response: [See example below]
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; [See example below]
 
-Example: show all
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; show all
 
-Example response: (table truncated for brevity)
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (table truncated for brevity)
 
 |     | class | det   | cap | conn | set        | pwr    | ext | short | single | mps | inrush |
 |-----|-------|-------|-----|------|------------|--------|-----|-------|--------|-----|--------|
@@ -162,202 +158,230 @@ Example response: (table truncated for brevity)
 | …   | …     | …     | …   | …    | …          |        | …   | …     | …      | …   | …      |
 | P8: | 4D,4D | LO,LO | 0,0 | 1,1  | \---PWR--- | 50,50  | 1   | 0,0   | 0      | 1,1 | 85     |
 
-CLEAR 
+<br/>CLEAR 
 ------
 
->   Description Clear user settings in EEPROM. Note that there is no ‘port’ or
->   ‘group’ syntax for ‘\*clear’.  
->     
->   See [EEPROM Warning](#eeprom-warning).
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Clear user settings in EEPROM. Note that there is no ‘port’ or ‘group’ syntax for<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ‘\*clear’.  
+     
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; See [EEPROM Warning](#eeprom-warning).
 
->   Command: \*clear
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; \*clear
 
->   Response: EEPROM clearing settings copy 1  
->   EEPROM clearing settings copy 1  
->   EEPROM settings cleared
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; EEPROM clearing settings copy 1<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;EEPROM clearing settings copy 1<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;EEPROM settings cleared
 
-LOAD 
+<br/>LOAD 
 -----
 
->   Description Load user settings from EEPROM. Note that there is no ‘port’ or
->   ‘group’ syntax for ‘\*load’.
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Load user settings from EEPROM. Note that there is no ‘port’ or ‘group’ syntax for<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ‘\*load’.
 
->   Command: \*load
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; \*load
 
->   Response: EEPROM restoring user settings  
->   :p1 restored  
->   :p2 restored  
->   …  
->   :p24 restored
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; EEPROM restoring user settings<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :p1 restored<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :p2 restored<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; …<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :p24 restored
 
-SAVE 
+<br/>SAVE 
 -----
 
->   Description Save current user settings to EEPROM. Note that there is no
->   ‘port’ or ‘group’ syntax for ‘save’.  
->     
->   See [EEPROM Warning](#eeprom-warning).
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Save current user settings to EEPROM. Note that there is no ‘port’ or ‘group’<br/> 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; syntax for ‘save’.  
+     
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; See [EEPROM Warning](#eeprom-warning).
 
->   Command: \*save
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; \*save
 
->   Response: EEPROM saving configuration  
->   EEPROM user settings saved
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; EEPROM saving configuration<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;EEPROM user settings saved
 
-PORT / GROUP PREFIX
+<br/>PORT / GROUP PREFIX
 -------------------
 
->   Description For all port-specific commands, a port or group prefix will
->   restrict the command to a specific port or port group. The prefix must be
->   followed by a space before the port command. If no prefix is used, the
->   command will be applied to all 24 ports.
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; For all port-specific commands, a port or group prefix will restrict the command to<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a specific port or port group. The prefix must be followed by a space before the<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; port command. If no prefix is used, the command will be applied to all 24 ports.
 
->   Port Prefix: pN
+**Port Prefix:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pN
 
->   This specified port N where N is from 1 to 24.
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; This specified port N where N is from 1 to 24.
 
->   Group Prefix: gN
+**Group Prefix:** &nbsp; &nbsp; &nbsp; &nbsp; gN
 
->   This specifies group N where N is from 1 to 3.
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; This specifies group N where N is from 1 to 3.
 
->   group 1 = ports 1-8
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; group 1 = ports 1-8<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; group 2 = ports 9-16<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; group 3 = ports 17-24
 
->   group 2 = ports 9-16
-
->   group 3 = ports 17-24
-
-CAP
+<br/>CAP
 ---
 
-| Description | Controls the 10uF capacitor across the full-wave bridge. This represents either a legacy capacitive signature or an AC load. Using two values separated with a comma allows the main and alt pairs to be set differently, or a single value will be applied to both pairs. The default state is off for both pairs. |
-|-------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|             |                                                                                                                                                                                                                                                                                                                     |
-| Command:    | cap \<on\|off\|0,0\|0,1\|1,0\|1,1\>                                                                                                                                                                                                                                                                                 |
-|             |                                                                                                                                                                                                                                                                                                                     |
-| Response:   | printf(":p%d cap %d\\r\\n", port, state);                                                                                                                                                                                                                                                                           |
-|             | - or -                                                                                                                                                                                                                                                                                                              |
-|             | printf(":p%d cap %d,%d\\r\\n",port,stateM,stateA); state = 1 or 0 for on and off respectively.                                                                                                                                                                                                                      |
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Controls the 10uF capacitor across the full-wave bridge. This represents either a<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; legacy capacitive signature or an AC load. Using two values separated with a<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; comma allows the main and alt pairs to be set differently, or a single value will be<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; applied to both pairs.<br/>
 
-CLASS – Single Signature
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The default state is off for both pairs.
+
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cap &lt;on\|off\|0,0\|0,1\|1,0\|1,1&gt;
+
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(":p%d cap %d\\r\\n", port, state);<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- or -<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;printf(":p%d cap %d,%d\\r\\n",port,stateM,stateA);<br/>
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;state = 1 or 0 for on and off respectively.
+
+<br/>CLASS – Single Signature
 ------------------------
 
-| Description | Sets the IEEE load class while in single signature mode. See IEEE 802.3af, 802.3at, and 802.3bt specifications (external documents). The default setting is 0. |
-|-------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|             |                                                                                                                                                                |
-| Command:    | cl[ass] \<0\|1\|2\|3\|4\|5\|6\|7\|8\>                                                                                                                          |
-|             |                                                                                                                                                                |
-| Argument:   | class value                                                                                                                                                    |
-|             |                                                                                                                                                                |
-| Response:   | printf(":p%d class %d\\r\\n", port, class);                                                                                                                    |
-| Example:    | sin 1                                                                                                                                                          |
-|             | p9 cl 6                                                                                                                                                        |
-| Response:   | :p9 class 6\<CR\>\<LF\>                                                                                                                                        |
-|             | This sets port 9 IEEE "class" to 6.                                                                                                                            |
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Sets the IEEE load class while in single signature mode. See IEEE 802.3af,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 802.3at, and 802.3bt specifications (external documents).
 
-CLASS – Dual Signature
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The default setting is 0.
+
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cl[ass] &lt;0\|1\|2\|3\|4\|5\|6\|7\|8&gt;
+
+**Argument:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; class value
+
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;printf(":p%d class %d\\r\\n", port, class);
+
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sin 1<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p9 cl 6
+
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:p9 class 6&lt;CR&gt;&lt;LF&gt;
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; This sets port 9 IEEE "class" to 6.
+
+<br/>CLASS – Dual Signature
 ----------------------
 
-| Description | Sets the IEEE load class while in dual signature mode. The command supports both the Type 1/2 “Legacy” class settings and the Type 3/4 “Compliant” class settings. See IEEE 802.3af, 802.3at, and 802.3bt specification (external documents). Using two values separated with a comma allows the main and alt pairs to be set differently, or a single value will be applied to both pairs. Use a capital ‘L’ after the class number to specify the dual signature legacy class. If left off, the compliant class setting is used. The default setting is 0 for both pairs. |
-|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Command:    | cl[ass] \<0\|1\|2\|3\|4\|5\>[, 0\|1\|2\|3\|4\|5]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|             | - or -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|             | cl[ass] \<0\|1L\|2L\|3L\|4L\>[, 0\|1L\|2L\|3L\|4L]                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-|             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Argument:   | class value (append a capital ‘L’ for type 1/2 legacy class settings)                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Response:   | printf(":p%d class %d\\r\\n", port, class);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|             | - or -                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|             | printf(":p%d class %d,%d\\r\\n",port,clsM,clsA);                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-|             |                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
-| Example:    | sin 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|             | p9 cl 3                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| Response:   | :p9 class 3D\<CR\>\<LF\>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-|             | This sets port 9 IEEE "class" to compliant class 3 on both pairs.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           |
-| Example:    | sin 0                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       |
-|             | p1 cl 1L,2L                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| Response:   | :p1 class 1L,2L\<CR\>\<LF\>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-|             | This sets port 1 IEEE "class" to legacy class 1 on the main pair and legacy class 2 on the alt pair.                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Sets the IEEE load class while in dual signature mode. The command supports both<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; the Type 1/2 “Legacy” class settings and the Type 3/4 “Compliant” class settings.<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; See IEEE 802.3af, 802.3at, and 802.3bt specification (external documents).<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Using two values separated with a comma allows the main and alt pairs to be set<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; differently, or a single value will be applied to both pairs. Use a capital ‘L’ after the<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; class number to specify the dual signature legacy class. If left off, the compliant<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; class setting is used. 
 
-CLASS – Autoclass
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The default setting is 0 for both pairs.
+
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cl[ass] &lt;0\|1\|2\|3\|4\|5&gt;[, 0|1|2|3|4|5]<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- or -<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cl[ass] &lt;0\|1L\|2L\|3L\|4L&gt;[, 0\|1L\|2L\|3L\|4L]
+
+**Argument:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; class value (append a capital ‘L’ for type 1/2 legacy class settings)
+
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;printf(":p%d class %d\\r\\n", port, class);<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- or -<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(":p%d class %d,%d\\r\\n",port,clsM,clsA);
+
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sin 0<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p9 cl 3
+
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:p9 class 3D&lt;CR&gt;&lt;LF&gt;
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; This sets port 9 IEEE "class" to compliant class 3 on both pairs.
+
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sin 0<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p1 cl 1L,2L
+
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:p1 class 1L,2L&lt;CR&gt;&lt;LF&gt;
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; This sets port 1 IEEE "class" to legacy class 1 on the main pair and legacy class 2 on<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; the alt pair.
+
+<br/>CLASS – Autoclass
 -----------------
 
-| Description | Used to enable support for autoclass. Using two values separated with a comma allows the main and alt pairs to be set differently, or a single value will be applied to both pairs.                                                                                                                                                                                               |
-|             |                                                                                                                                                                                                                                                                                                                                                                                   |
-|             | Note that autoclass is an addition to the current number class setting, and when enabled, is indicated with an ‘A’ after the number class setting. The default setting is aoff for both pairs.                                                                                                                                                                                    |
-|-------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|             |                                                                                                                                                                                                                                                                                                                                                                                   |
-| Command:    | cl[ass] \<aon\|aoff\>                                                                                                                                                                                                                                                                                                                                                             |
-|             |                                                                                                                                                                                                                                                                                                                                                                                   |
-| Argument:   | “aon” for autoclass on, or “aoff” for autoclass off                                                                                                                                                                                                                                                                                                                               |
-|             |                                                                                                                                                                                                                                                                                                                                                                                   |
-| Response:   | printf(":p%d class %d%c\\r\\n",port,class,acls);                                                                                                                                                                                                                                                                                                                                  |
-|             | - or -                                                                                                                                                                                                                                                                                                                                                                            |
-|             | printf(":p%d class %d%c,%d%c\\r\\n", port,clsM,clsA,aclsM,aclsA);                                                                                                                                                                                                                                                                                                                 |
-|             |                                                                                                                                                                                                                                                                                                                                                                                   |
-| Example:    | p9 cl 3                                                                                                                                                                                                                                                                                                                                                                           |
-|             | p9 cl aon                                                                                                                                                                                                                                                                                                                                                                         |
-| Response:   | :p9 class 3A\<CR\>\<LF\>                                                                                                                                                                                                                                                                                                                                                          |
-|             | This sets port 9 IEEE "class" to 3 on both pairs, with autoclass on.                                                                                                                                                                                                                                                                                                              |
-| Example:    | p1 cl 1,2                                                                                                                                                                                                                                                                                                                                                                         |
-|             | p1 cl aof                                                                                                                                                                                                                                                                                                                                                                         |
-| Response:   | :p1 class 1,2\<CR\>\<LF\>                                                                                                                                                                                                                                                                                                                                                         |
-|             | This sets port 1 IEEE "class" to 1 on the main pair and 2 on the alt pair, with autoclass off on both pairs.                                                                                                                                                                                                                                                                      |
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Used to enable support for autoclass. Using two values separated with a comma<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; allows the main and alt pairs to be set differently, or a single value will be applied to<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; both pairs. Note that autoclass is an addition to the current number class setting,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; and when enabled, is indicated with an ‘A’ after the number class setting.
 
-CONNECT 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The default setting is aoff for both pairs.
+
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cl[ass] &lt;aon|aoff&gt;
+
+**Argument:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; “aon” for autoclass on, or “aoff” for autoclass off
+
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(":p%d class %d%c\r\n",port,class,acls);<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- or -<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;printf(":p%d class %d%c,%d%c\r\n", port,clsM,clsA,aclsM,aclsA);
+
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p9 cl 3<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p9 cl aon
+
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:p9 class 3A&lt;CR&gt;&lt;LF&gt;
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; This sets port 9 IEEE "class" to 3 on both pairs, with autoclass on.
+
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p1 cl 1,2<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p1 cl aof
+
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:p1 class 1,2&lt;CR&gt;&lt;LF&gt;
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; This sets port 1 IEEE "class" to 1 on the main pair and 2 on the alt pair, with<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; autoclass off on both pairs.
+
+<br/>CONNECT 
 --------
 
->   Description Controls the relays that connect the power load circuitry to the
->   UUT port via the GbE transformer. From a power perspective, this is
->   equivalent to plugging in the RJ45 from the UUT. See the [Operational
->   Overview](#_Operational_Overview) section for more details. Connect must be
->   ‘on’ for the UUT to see an IEEE 802.3af/at/bt PoE load. The connect command
->   can also be used to select the main, alternate, or both power pairs. If a
->   comma is present, the command assumes the user is specifying the connect
->   status of each pair individually. The first value is the connect status of
->   the main pair and the second is the alternate pair (e.g. when “connect 0,1”
->   is entered, only the alternate pair will be connected to the load).
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Controls the relays that connect the power load circuitry to the UUT port via the<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; GbE transformer. From a power perspective, this is equivalent to plugging in the<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; RJ45 from the UUT. See the [Operational Overview](#_Operational_Overview) section for more details.<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Connect must be ‘on’ for the UUT to see an IEEE 802.3af/at/bt PoE load. The<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; connect command can also be used to select the main, alternate, or both power<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pairs. If a comma is present, the command assumes the user is specifying the<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; connect status of each pair individually. The first value is the connect status of the<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; main pair and the second is the alternate pair (e.g. when “connect 0,1” is entered,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; only the alternate pair will be connected to the load).
 
->   Command: conn[ect] \<on\|off\|0\|1\|0,0\|0,1\|1,0\|1,1\>
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; conn[ect] &lt;on|off|0|1|0,0|0,1|1,0|1,1&gt;
 
->   Response: printf(":p%d Connect %d\\n", port, state);  
->   - or -  
->   printf(":p%d Connect %d,%d\\r\\n",port,stM,stA);
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;printf(":p%d Connect %d\\n", port, state);<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- or -<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(":p%d Connect %d,%d\\r\\n",port,stM,stA);
 
->   state = 1 or 0 for on and off respectively.
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; state = 1 or 0 for on and off respectively.
 
-DETECT
+<br/>DETECT
 ------
 
->   Description Sets the IEEE 802.3af/at/bt detect signature. Using two values
->   separated with a comma allows the main and alt pairs to be set differently,
->   or a single value will be applied to both pairs.  
->     
->   The default setting is ok for both pairs.
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Sets the IEEE 802.3af/at/bt detect signature. Using two values separated with a<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; comma allows the main and alt pairs to be set differently, or a single value will be<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; applied to both pairs.  
+     
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The default setting is ok for both pairs.
 
->   Command: det[ect] \<ok\|lo\|ok,ok\|ok,lo\|lo,ok\|ok,ok\>
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; det[ect] &lt;ok|lo|ok,ok|ok,lo|lo,ok|ok,ok&gt;
 
-Arguments: ok signature resistance 24.9K ohms  
-lo signature resistance 13K ohms
+**Arguments:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ok &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; -signature resistance 24.9K ohms  
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;lo &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;-signature resistance 13K ohms
 
->   Response: printf(":p%d det %s\\n", port, arg);  
->   - or -  
->   printf(":p%d det %d,%d\\r\\n",port,argM,argA);
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(":p%d det %s\\n", port, arg);<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- or -<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;printf(":p%d det %d,%d\\r\\n",port,argM,argA);
 
-EXT 
+<br/>EXT 
 ----
 
->   Description Controls the connection of the data path from one test port to
->   another. The data path is connected between adjacent ports: 1-2, 3-4, etc.
->   when the ext command is set on for both ports. This is necessary for the
->   ports to send data to each other. When ext is off, the data path is open.  
->     
->   The default state is on.
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Controls the connection of the data path from one test port to another. The data<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; path is connected between adjacent ports: 1-2, 3-4, etc. when the ext command is<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; set on for both ports. This is necessary for the ports to send data to each other.<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; When ext is off, the data path is open.  
+     
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The default state is on.
 
->   Command: ext[ernal] \<on\|off\>
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ext[ernal] &lt;on|off&gt;
 
-Response: printf(":p%d Ext Ref %d\\n", port, state);
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(":p%d Ext Ref %d\\n", port, state);
 
->   state = 1 or 0 for on and off respectively.
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;state = 1 or 0 for on and off respectively.
 
 <br>GETI 
 ---------
