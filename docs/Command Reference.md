@@ -386,103 +386,108 @@ change."
 <br>GETI 
 ---------
 
->   Description Measures the load current being drawn from the UUT on the main
->   and alt pairs individually, and as a total for both pairs. Current readings
->   are in milliamps.
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Measures the load current being drawn from the UUT on the main and alt pairs<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; individually, and as a total for both pairs. Current readings are in milliamps.
 
->   Command: geti
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; geti
 
->   Response: printf(":p%d %dmA, %dmA, %dmA\\r\\n",port,val, val_alt,
->   val_total);
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(":p%d %dmA, %dmA, %dmA\\r\\n",port,val, val_alt,
+val_total);
 
-Example: p1 geti
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p1 geti
 
-Example response: :p1 501mA, 500mA, 1001mA\<CR\>\<LF\>
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :p1 501mA, 500mA, 1001mA&lt;CR&gt;&lt;LF&gt;
 
-GETP 
+<br/>GETP 
 -----
 
->   Description Measures the load power being drawn from the UUT on the main and
->   alt pairs individually, and as a total for both pairs. Power readings are in
->   watts.
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Measures the load power being drawn from the UUT on the main and alt pairs<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; individually, and as a total for both pairs. Power readings are in watts.
 
->   Command: getp
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; getp
 
->   Response: printf(":p%d %dW, %dW, %dW\\r\\n",port,val, val_alt, val_total);
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(":p%d %dW, %dW, %dW\\r\\n",port,val, val_alt, val_total);
 
-Example: p1 getp
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p1 getp
 
-Example response: :p1 50W, 50W, 100W\<CR\>\<LF\>
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :p1 50W, 50W, 100W&lt;CR&gt;&lt;LF&gt;
 
-GETV 
+<br/>GETV 
 -----
 
->   Description Measures the voltages from the UUT (center taps of GbE
->   magnetics) of both pairs. Reports the voltage as either positive or negative
->   depending on the polarity of the pair. The “Cisco” standard 1,2 = negative,
->   3,6 = positive is reported as a positive voltage (main pair). Alt pairs with
->   4,5 = positive, and 7,8 = negative is reported as a positive voltage.
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Measures the voltages from the UUT (center taps of GbE magnetics) of both pairs.<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Reports the voltage as either positive or negative depending on the polarity of the<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pair. The “Cisco” standard 1,2 = negative, 3,6 = positive is reported as a positive<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; voltage (main pair). Alt pairs with 4,5 = positive, and 7,8 = negative is reported as a<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; positive voltage.
 
->   Command: getv
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; getv
 
->   Response: printf(":p%d %.1fV, %.1fV\\r\\n",port,fvalM,fvalA);
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(":p%d %.1fV, %.1fV\\r\\n",port, fvalM, fvalA);
 
->   The result will be between -60.0 and 60.0
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;The result will be between -60.0 and 60.0
 
-Example: p1 getv
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p1 getv
 
-Example response: :p1 50.5V, 0.0V\<CR\>\<LF\>
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :p1 50.5V, 0.0V&lt;CR&gt;&lt;LF&gt;
 
 <br>INR
 -------
 
->   Description Sets the time period (in milliseconds) of the inrush timer. The
->   default time period is 85ms, and the maximum time period is 255ms. The same
->   inrush time period is set for both pairs. The inrush timer controls the
->   application of the full ‘set’ command current, with a minimum current of
->   about 100ma being allowed during the inrush period. The inrush timer starts
->   when the input voltage goes above UVLO (38v typical). See [Appendix
->   A.3](#_A.3_Inrush_Example) for an example waveform of the inrush current.
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Sets the time period (in milliseconds) of the inrush timer. The default time period is<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; 85ms, and the maximum time period is 255ms. The same inrush time period is set<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for both pairs. The inrush timer controls the application of the full ‘set’ command<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; current, with a minimum current of about 100ma being allowed during the inrush<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; period. The inrush timer starts when the input voltage goes above UVLO<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (38v typical). See [Appendix A.3](#_A.3_Inrush_Example) for an example waveform of the inrush current.
 
->   Command: inr[ush] \<value\>
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; inr[ush] &lt;value&gt;
 
->   Response: printf(":p%d inrush delay %d ms\\r\\n", port, val);
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(":p%d inrush delay %d ms\\r\\n", port, val);
 
-Example: p1 inr 100
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p1 inr 100
 
-Example response: :p1 inrush delay 100 ms\<CR\>\<LF\>
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :p1 inrush delay 100 ms&lt;CR&gt;&lt;LF&gt;
 
-MPS
+<br/>MPS
 ---
 
-| Description       | Turns the minimum power signature feature in the PD controller on or off. Using two values separated with a comma allows the main and alt pairs to be set differently, or a single value will be applied to both pairs. When MPS is on, the power signature will be 18.5mA, and will have a 26% duty cycle for PSE types 1 and 2, and a 5.4% duty cycle for PSE types 3 and 4. The default state is off for both pairs. |
-|-------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                   |                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| Command:          | mps \<on\|off\|0,0\|0,1\|1,0\|1,1\>                                                                                                                                                                                                                                                                                                                                                                                     |
-|                   |                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| Response:         | printf(":p%d mps %d\\r\\n", port, val);                                                                                                                                                                                                                                                                                                                                                                                 |
-|                   | - or -                                                                                                                                                                                                                                                                                                                                                                                                                  |
-|                   | printf(":p%d mps %d,%d\\r\\n",port,valM,valA);                                                                                                                                                                                                                                                                                                                                                                          |
-| Example:          | p1 mps 1                                                                                                                                                                                                                                                                                                                                                                                                                |
-| Example response: | :p1 mps 1\<CR\>\<LF\>                                                                                                                                                                                                                                                                                                                                                                                                   |
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Turns the minimum power signature feature in the PD controller on or off. Using<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; two values separated with a comma allows the main and alt pairs to be set<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; differently, or a single value will be applied to both pairs.<br/>
 
-PSE 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; When MPS is on, the power signature will be 18.5mA, and will have a 26% duty<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; cycle for PSE types 1 and 2, and a 5.4% duty cycle for PSE types 3 and 4.<br/>
+
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The default state is off for both pairs.
+
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; mps &lt;on\|off\|0,0\|0,1\|1,0\|1,1&gt;
+
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(":p%d mps %d\\r\\n", port, val)<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- or -<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;printf(":p%d mps %d,%d\\r\\n",port,valM,valA;                                                                                                               
+
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p1 mps 1
+
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :p1 mps 1&lt;CR&gt;&lt;LF&gt;
+
+<br/>PSE 
 ----
 
->   Description Returns the state of the TPH, TPL and status bits from the TI
->   TP2372 PD controllers of both pairs. A “-“ indicates that the specified bit
->   is not set. These status bits are specific to the PD controller, and cam be
->   interpreted using the tables below (data from TI TP2372 spec).
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Returns the state of the TPH, TPL and status bits from the TI TP2372 PD<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; controllers of both pairs. A “-“ indicates that the specified bit is not set. These<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; status bits are specific to the PD controller, and cam be interpreted using the<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; tables below (data from TI TP2372 spec).
 
->   Command: pse
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pse
 
->   Response: printf(":p%d MAIN: %s, %s, %s, ALT: %s, %s, %s\\r\\n", port, val);
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(":p%d MAIN: %s, %s, %s, ALT: %s, %s, %s\\r\\n", port, val);
 
-Example: p1 pse
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p1 pse
 
-Example response: :p1 MAIN: TPH, - , - , ALT: TPH, - , - \<CR\>\<LF\>
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :p1 MAIN: TPH, - , - , ALT: TPH, - , - &lt;CR&gt;&lt;LF&gt;<br/>
 
-Table 1 - TPH, TPL, BT and Allocated Power Truth Table
+<div align="center">Table 1 - TPH, TPL, BT and Allocated Power Truth Table</div>
 
 | PSE Type | PD Class | Number of Class Cycles | PSE Allocated Power at PD (W) | TPH  | TPL  |      |
 |----------|----------|------------------------|-------------------------------|------|------|------|
@@ -501,7 +506,7 @@ Table 1 - TPH, TPL, BT and Allocated Power Truth Table
 | 4        | 7        | 5                      | 62                            | LOW  | LOW  | LOW  |
 | 4        | 8        | 5                      | 71                            | LOW  | LOW  | LOW  |
 
-Table 2 - Power Demotion Cases
+<div align="center">Table 2 - Power Demotion Cases</div>
 
 | PSE Type | PD Class | Number of Class Cycles | PSE Allocated Power at PD (W) | TPH  | TPL  |     |
 |----------|----------|------------------------|-------------------------------|------|------|-----|
@@ -509,141 +514,153 @@ Table 2 - Power Demotion Cases
 | 3-4      | 5-8      | 2,3                    | 25.5                          | HIGH | LOW  | LOW |
 | 3-4      | 7-8      | 4                      | 51                            | LOW  | HIGH | LOW |
 
-POWER
+<br/>POWER
 -----
 
-| Description       | Sets load control to ‘power’ mode, and sets load value in watts. If set above 100W (or 50W per pair) an error will occur. If a single value is used, it is divided in half, and each pair will draw half the specified amount. Using two values separated with a comma allows the main and alt pairs to be set differently. Single, odd, input values will be rounded down. |
-|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                   |                                                                                                                                                                                                                                                                                                                                                                             |
-| Command:          | pwr \<value\>                                                                                                                                                                                                                                                                                                                                                               |
-|                   | - or -                                                                                                                                                                                                                                                                                                                                                                      |
-|                   | pwr \<value main\>,\<value alt\>                                                                                                                                                                                                                                                                                                                                            |
-|                   |                                                                                                                                                                                                                                                                                                                                                                             |
-| Response:         | printf(":p%d pwr %d, %d (%d) W\\r\\n", port, mVal, aVal, totalW);                                                                                                                                                                                                                                                                                                           |
-| Example:          | p1 pwr 100                                                                                                                                                                                                                                                                                                                                                                  |
-| Example response: | :p1 50, 50 (100) W\<CR\>\<LF\>                                                                                                                                                                                                                                                                                                                                              |
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Sets load control to ‘power’ mode, and sets load value in watts. If set above 100W<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (or 50W per pair) an error will occur. If a single value is used, it is divided in half,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; and each pair will draw half the specified amount. Using two values separated with<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; a comma allows the main and alt pairs to be set differently. Single, odd, input values<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; will be rounded down.
 
-RESET 
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pwr &lt;value&gt;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- or -<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;pwr &lt;value main&gt;,&lt;value alt&gt;                                                                                                                     
+
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(":p%d pwr %d, %d (%d) W\\r\\n", port, mVal, aVal, totalW);                                                                               
+
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p1 pwr 100
+
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :p1 50, 50 (100) W&lt;CR&gt;&lt;LF&gt;
+
+<br/>RESET 
 ------
 
->   Description Resets port(s) to fully disconnected state.
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Resets port(s) to fully disconnected state.
 
->   Command: res[et]
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; res[et]
 
->   Response: printf(":p%d reset\\n", port);
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(":p%d reset\\n", port);
 
-SET
+<br/>SET
 ---
 
->   Description Sets load control to ‘current’ mode, and sets load value in
->   milliamps. If set too low, the minimum value will be set; if above 2000mA
->   (or 1000mA per pair) an error will occur. If a single value is used, it is
->   divided in half, and each pair will draw half the specified amount. Using
->   two values separated with a comma allows the main and alt pairs to be set
->   differently.
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Sets load control to ‘current’ mode, and sets load value in milliamps. If set too low,<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; the minimum value will be set; if above 2000mA (or 1000mA per pair) an error will<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; occur. If a single value is used, it is divided in half, and each pair will draw half the<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; specified amount. Using two values separated with a comma allows the main and<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; alt pairs to be set differently.
 
->   Command: set \<value\>  
->   set \<value main\>,\<value alt\>
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; set &lt;value&gt;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; set &lt;value main&gt;, &lt;value alt&gt;
 
->   Response: printf(":p%d %d, %dmA\\r\\n",port,valM,valA);  
->   - or -  
->   printf(":p%d %d, %dmA (min)\\r\\n",port,valM,valA);
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(":p%d %d, %dmA\\r\\n",port, valM, valA);<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- or -<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;printf(":p%d %d, %dmA (min)\\r\\n",port, valM, valA);
 
-Example: p1 set 350, 450
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p1 set 350, 450
 
-Example response: :p1 350, 450 mA\<CR\>\<LF\>
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :p1 350, 450 mA&lt;CR&gt;&lt;LF&gt;
 
-Example: g2 set 350
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; g2 set 350
 
->   Example response: :p9 350 mA\<CR\>\<LF\>  
->   ….  
->   :p16 350 mA\<CR\>\<LF\>
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :p9 350 mA&lt;CR&gt;&lt;LF&gt;<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;….<br/> 
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;:p16 350 mA&lt;CR&gt;&lt;LF&gt;
 
-SHORT
+<br/>SHORT
 -----
 
->   Description Controls a relay that can short the UUT power before the full
->   wave bridge. Using two values separated with a comma allows the main and alt
->   pairs to be set differently, or a single value will be applied to both
->   pairs. *WARNING - SHORTING AT FULL POWER CAN DAMAGE UUT.*  
->     
->   The default state is off for both pairs.
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Controls a relay that can short the UUT power before the full wave bridge. Using<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; two values separated with a comma allows the main and alt pairs to be set<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; differently, or a single value will be applied to both pairs.<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; ***WARNING - SHORTING AT FULL POWER CAN DAMAGE UUT.***
+  
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The default state is off for both pairs.
 
->   Command: short \<on\|off\|0,0\|0,1\|1,0\|1,1\>
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; short &lt;on\|off\|0,0\|0,1\|1,0\|1,1&gt;
 
->   Response: printf(":p%d short %d\\r\\n", port, val);
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(":p%d short %d\\r\\n", port, val);
 
-Example: p1 short 1
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p1 short 1
 
-Example response: :p1 short 1\<CR\>\<LF\>
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :p1 short 1&lt;CR&gt;&lt;LF&gt;
 
-SHOW
+<br/>SHOW
 ----
 
-| Description       | Shows the current (last-sent) state of a specific command. For the ‘set’ and ‘pwr’ values, will also indicate which control mode (set/current or pwr/power) is in effect for each port. |
-|-------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-|                   |                                                                                                                                                                                         |
-| Command:          | show \<cl\|det\|cap\|conn\|set\|pwr\|ext\|shor\|sin\|mps\|inr\>                                                                                                                         |
-|                   |                                                                                                                                                                                         |
-| Response:         | Depends on selected command, but is the same as the response of that command.                                                                                                           |
-| Example:          | p1 sh cl                                                                                                                                                                                |
-| Example response: | :p1 class 0,1\<CR\>\<LF\>                                                                                                                                                               |
-| Example:          | p1 set 1000 p1 sh pwr                                                                                                                                                                   |
-| Example response: | :p1 in SET control mode                                                                                                                                                                 |
-| Example:          | p1 pwr 100 p1 sh set                                                                                                                                                                    |
-| Example response: | :p1 in PWR control mode                                                                                                                                                                 |
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Shows the current (last-sent) state of a specific command. For the ‘set’ and ‘pwr’<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; values, will also indicate which control mode (set/current or pwr/power) is in effect<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; for each port.
 
-SINGLE
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; show &lt;cl\|det\|cap\|conn\|set\|pwr\|ext\|shor\|sin\|mps\|inr&gt;
+
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Depends on selected command, but is the same as the response of that command.                                                                              
+
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p1 sh cl
+
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :p1 class 0,1&lt;CR&gt;&lt;LF&gt;
+
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p1 set 1000<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p1 sh pwr
+
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :p1 in SET control mode
+
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p1 pwr 100<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p1 sh set
+
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :p1 in PWR control mode
+
+<br/>SINGLE
 ------
 
->   Description Turns the single signature feature on or off. Setting the single
->   signature feature off reverts to the default dual signature mode.  
->     
->   The default state is off.
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Turns the single signature feature on or off. Setting the single signature feature off<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; reverts to the default dual signature mode.  
 
->   Command: sin[gle] \<on\|off\>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; The default state is off.
 
->   Response: printf(":p%d Single Signature\\r\\n");  
->   - or -  
->   printf(":p%d Dual Signature\\r\\n");
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; sin[gle] &lt;on\|off&gt;
 
-Example: p1 sin 1
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(":p%d Single Signature\\r\\n");  
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;- or -  
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;printf(":p%d Dual Signature\\r\\n");
 
-Example response: :p1 Single Signature\<CR\>\<LF\>
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p1 sin 1
 
-Example: p1 sin 0
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :p1 Single Signature&lt;CR&gt;&lt;LF&gt;
 
-Example response: :p1 Dual Signature\<CR\>\<LF\>
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p1 sin 0
 
-STATUS 
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :p1 Dual Signature&lt;CR&gt;&lt;LF&gt;
+
+<br/>STATUS 
 -------
 
->   Description Returns the "Power Good" status of the IEEE load controllers.
->   The power status is active when the IEEE controller is receiving power above
->   the UVLO value (38v typical) and the load capacitor is charged. Also reports
->   if an over-temperature condition occurred that caused the port to be shut
->   down.
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Returns the "Power Good" status of the IEEE load controllers. The power status is<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; active when the IEEE controller is receiving power above the UVLO value<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; (38v typical) and the load capacitor is charged. Also reports if an over-temperature<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; condition occurred that caused the port to be shut down.
 
->   Command: st[atus]
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; st[atus]
 
->   Response: printf(":p%d PWR %d, %d\\n",port,state1,state2);
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(":p%d PWR %d, %d\\n",port,state1,state2);
 
->   state = 1 or 0 for on and off respectively.
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;state = 1 or 0 for on and off respectively.
 
-Example: p1 st
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p1 st
 
-Example response: :p1 PWR 1, 1\<CR\>\<LF\>
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :p1 PWR 1, 1&lt;CR&gt;&lt;LF&gt;
 
-TEMPERATURE
+<br/>TEMPERATURE
 -----------
 
->   Description Reports the temperature of the drain pins of the MOSFET loads on
->   the main and alt pairs, as measured on the line card PCB.
+**Description:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; Reports the temperature of the drain pins of the MOSFET loads on the main and alt<br/>
+&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; pairs, as measured on the line card PCB.
 
->   Command: temp[erature]
+**Command:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; temp[erature]
 
->   Response: printf(":p%d %3d C, %3d C\\n", port, tempC, tempC);
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; printf(":p%d %3d C, %3d C\\n", port, tempC, tempC);
 
-Example: p2 temp
+**Example:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; p2 temp
 
-Example response: :p2 27 C, 29 C\<CR\>\<LF\>
+**Response:** &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; :p2 27 C, 29 C &lt;CR&gt;&lt;LF&gt;
